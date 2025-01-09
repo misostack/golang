@@ -117,6 +117,7 @@ func main() {
 		go AVeryLongRequest(i, channel)
 	}
 
+
 	// Wait for all goroutines to finish
 	// waitingTime := 250
 	// time.Sleep(time.Duration(waitingTime) * time.Millisecond) // Adjust the duration as needed
@@ -132,6 +133,61 @@ func main() {
 
 ```
 
+**Note**: Only the sender should close a channel, never the receiver. Sending on a closed channel will cause a panic
+
+### With Mutex and RWMutex
+
+```go
+package example
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+// let's say we have a params can be in memory or redis
+// in this case we use memory
+var a int
+var mtx = sync.Mutex{}
+var mtxrw = sync.RWMutex{}
+
+func increaseValue() {
+	mtx.Lock()
+	defer mtx.Unlock()
+	a++
+}
+
+func readValue(i int) {
+	fmt.Printf("%v. Current a value = %v\n", i, a)
+}
+
+func increaseValueLockWithRWMutex() {
+	// allow read
+	mtxrw.Lock()
+	defer mtxrw.Unlock()
+	a++
+}
+
+func MutexLockExample() {
+
+	times := 500
+	for i := 0; i < times; i++ {
+		//go increaseValue()
+		go increaseValueLockWithRWMutex()
+	}
+	for i := 1; i <= 500; i++ {
+		go readValue(i)
+	}
+	time.Sleep(1 * time.Second)
+	fmt.Println(a)
+}
+```
+
 ### References
 
+- https://go.dev/wiki/MutexOrChannel
 - https://go.dev/tour/concurrency/1
+- https://medium.com/@asgrr/golang-sync-4787b18fee41
+- https://viblo.asia/p/go-sync-package-6-khai-niem-chinh-ban-can-biet-Ny0VGj2pLPA
+- https://psj.codes/concurrency-in-go-part-1-goroutines-channels-and-select
