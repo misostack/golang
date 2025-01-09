@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"sync"
 	"time"
 )
@@ -94,18 +95,25 @@ func exampleOfHowLongSelectTake() {
 }
 
 var mtxrw sync.RWMutex = sync.RWMutex{}
-var locks map[string]int = make(map[string]int)
+var locks map[string]time.Time = make(map[string]time.Time)
 var total int
+var lockMaxDuration = time.Duration(5) * time.Second
 
 func acquiredLock(k string) (releaseFunc func(), acquireError error) {
 	mtxrw.Lock()
 	defer mtxrw.Unlock()
 	// check if existed
-	if _, existed := locks[k]; existed {
-		return nil, fmt.Errorf("lock already acquired")
+	if acquiredAt, existed := locks[k]; existed {
+		if time.Since(acquiredAt) < lockMaxDuration {
+			return nil, fmt.Errorf("lock already acquired")
+		}
+		// else
+		fmt.Println("Lock released!!!")
+		fmt.Println(strings.Repeat("-", 50))
+		delete(locks, k)
 	}
 	// otherwise add lock
-	locks[k] = 1
+	locks[k] = time.Now()
 	// Create release function
 	releaseFunc = func() {
 		mtxrw.Lock()
@@ -117,15 +125,31 @@ func acquiredLock(k string) (releaseFunc func(), acquireError error) {
 	return releaseFunc, nil
 }
 
-func cronHandler(received time.Time) {
-	keys := []string{"a"}
-	fmt.Printf("Cron handler at %v", received)
-	for _, k := range keys {
-		processingKey(k)
+func backgroundCleanUpLock() {
+	ticker := time.NewTicker(5 * time.Second)
+	defer ticker.Stop()
+	for {
+		<-ticker.C
+		// clean up
+		for k, acquiredAt := range locks {
+			if time.Since(acquiredAt) > time.Duration(10)*time.Second {
+				delete(locks, k)
+			}
+		}
+		fmt.Printf("Clean up lock\n")
 	}
 }
 
-func processingKey(k string) {
+func cronHandler(received time.Time) {
+	keys := []string{"a"}
+	processId := time.Now().String()
+	fmt.Printf("%v: Cron handler at %v", processId, received)
+	for _, k := range keys {
+		go processingKey(processId, k)
+	}
+}
+
+func processingKey(processId string, k string) {
 	fmt.Printf("Start processing for key=%v\n", k)
 	releaseFunc, err := acquiredLock(k)
 	if err != nil {
@@ -133,15 +157,16 @@ func processingKey(k string) {
 		return
 	}
 	defer releaseFunc()
-	time.Sleep(time.Duration(5) * time.Second)
+	time.Sleep(time.Duration(8) * time.Second)
 	total += 1
-	fmt.Printf("Total %v\n", total)
-	fmt.Printf("Finished processing for key=%v\n", k)
+	fmt.Printf("processId=%v - total %v\n", processId, total)
+	fmt.Printf("Finished processing for processId=%v key=%v\n", processId, k)
 }
 
 func main() {
 
 	// cron init
+	// go backgroundCleanUpLock()
 	for {
 		cronChannel := make(chan time.Time, 1)
 		time.Sleep(1 * time.Second)
