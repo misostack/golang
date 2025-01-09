@@ -1,0 +1,105 @@
+Start processing for key=a processId=2025-01-09 20:50:52.334781 +0700 +07 m=+1.000896459
+lock already acquired
+lock already acquired
+lock already acquired
+Clean up lock
+lock already acquired
+Lock released!!!
+--------------------------------------------------
+Start processing for key=a processId=2025-01-09 20:50:57.337791 +0700 +07 m=+6.003890668
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:50:52.334781 +0700 +07 m=+1.000896459 - total 1
+Finished processing for key=a
+ at 2025-01-09 20:51:00.337134 +0700 +07 m=+9.003224418Start processing for key=a processId=2025-01-09 20:51:00.339642 +0700 +07 m=+9.005732209
+Clean up lock
+lock already acquired
+lock already acquired
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:50:57.337791 +0700 +07 m=+6.003890668 - total 2
+Finished processing for key=a
+ at 2025-01-09 20:51:05.339471 +0700 +07 m=+14.005545584Start processing for key=a processId=2025-01-09 20:51:05.344183 +0700 +07 m=+14.010257959
+Clean up lock
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:51:00.339642 +0700 +07 m=+9.005732209 - total 3
+Finished processing for key=a
+ at 2025-01-09 20:51:08.340276 +0700 +07 m=+17.006340876Start processing for key=a processId=2025-01-09 20:51:08.346134 +0700 +07 m=+17.012199459
+lock already acquired
+lock already acquired
+Clean up lock
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:51:05.344183 +0700 +07 m=+14.010257959 - total 4
+Finished processing for key=a
+ at 2025-01-09 20:51:13.345721 +0700 +07 m=+22.011770251Start processing for key=a processId=2025-01-09 20:51:13.351222 +0700 +07 m=+22.017271751
+lock already acquired
+lock already acquired
+Clean up lock
+processId=2025-01-09 20:51:08.346134 +0700 +07 m=+17.012199459 - total 5
+Finished processing for key=a
+ at 2025-01-09 20:51:16.34751 +0700 +07 m=+25.013550418Start processing for key=a processId=2025-01-09 20:51:16.3544 +0700 +07 m=+25.020440084
+lock already acquired
+lock already acquired
+lock already acquired
+lock already acquired
+Clean up lock
+processId=2025-01-09 20:51:13.351222 +0700 +07 m=+22.017271751 - total 6
+Finished processing for key=a
+ at 2025-01-09 20:51:21.351641 +0700 +07 m=+30.017665418Start processing for key=a processId=2025-01-09 20:51:21.359487 +0700 +07 m=+30.025512001
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:51:16.3544 +0700 +07 m=+25.020440084 - total 7
+Finished processing for key=a
+ at 2025-01-09 20:51:24.355989 +0700 +07 m=+33.022003959Start processing for key=a processId=2025-01-09 20:51:24.361927 +0700 +07 m=+33.027941918
+lock already acquired
+Clean up lock
+lock already acquired
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:51:21.359487 +0700 +07 m=+30.025512001 - total 8
+Finished processing for key=a
+ at 2025-01-09 20:51:29.360386 +0700 +07 m=+38.026385293Start processing for key=a processId=2025-01-09 20:51:29.365723 +0700 +07 m=+38.031723084
+lock already acquired
+Clean up lock
+lock already acquired
+processId=2025-01-09 20:51:24.361927 +0700 +07 m=+33.027941918 - total 9
+Finished processing for key=a
+ at 2025-01-09 20:51:32.363173 +0700 +07 m=+41.029163334Start processing for key=a processId=2025-01-09 20:51:32.368504 +0700 +07 m=+41.034494793
+lock already acquired
+lock already acquired
+lock already acquired
+Clean up lock
+lock already acquired
+processId=2025-01-09 20:51:29.365723 +0700 +07 m=+38.031723084 - total 10
+Finished processing for key=a
+ at 2025-01-09 20:51:37.36703 +0700 +07 m=+46.033005251Start processing for key=a processId=2025-01-09 20:51:37.373313 +0700 +07 m=+46.039288001
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:51:32.368504 +0700 +07 m=+41.034494793 - total 11
+Finished processing for key=a
+ at 2025-01-09 20:51:40.369858 +0700 +07 m=+49.035823834Start processing for key=a processId=2025-01-09 20:51:40.375682 +0700 +07 m=+49.041647251
+Clean up lock
+lock already acquired
+lock already acquired
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:51:37.373313 +0700 +07 m=+46.039288001 - total 12
+Finished processing for key=a
+ at 2025-01-09 20:51:45.374439 +0700 +07 m=+54.040389084Start processing for key=a processId=2025-01-09 20:51:45.380679 +0700 +07 m=+54.046628959
+Clean up lock
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:51:40.375682 +0700 +07 m=+49.041647251 - total 13
+Finished processing for key=a
+ at 2025-01-09 20:51:48.377021 +0700 +07 m=+57.042962168Start processing for key=a processId=2025-01-09 20:51:48.382819 +0700 +07 m=+57.048759626
+lock already acquired
+lock already acquired
+Clean up lock
+lock already acquired
+lock already acquired
+processId=2025-01-09 20:51:45.380679 +0700 +07 m=+54.046628959 - total 14
+Finished processing for key=a
+ at 2025-01-09 20:51:53.382068 +0700 +07 m=+62.047993168Start processing for key=a processId=2025-01-09 20:51:53.388014 +0700 +07 m=+62.053939043
+lock already acquired

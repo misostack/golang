@@ -143,30 +143,30 @@ func backgroundCleanUpLock() {
 func cronHandler(received time.Time) {
 	keys := []string{"a"}
 	processId := time.Now().String()
-	fmt.Printf("%v: Cron handler at %v", processId, received)
+	//fmt.Printf("%v: Cron handler at %v", processId, received)
 	for _, k := range keys {
 		go processingKey(processId, k)
 	}
 }
 
 func processingKey(processId string, k string) {
-	fmt.Printf("Start processing for key=%v\n", k)
 	releaseFunc, err := acquiredLock(k)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	defer releaseFunc()
+	fmt.Printf("Start processing for key=%v processId=%v\n", k, processId)
 	time.Sleep(time.Duration(8) * time.Second)
 	total += 1
 	fmt.Printf("processId=%v - total %v\n", processId, total)
-	fmt.Printf("Finished processing for processId=%v key=%v\n", processId, k)
+	fmt.Printf("Finished processing for key=%v\n at %v", k, time.Now())
 }
 
 func main() {
 
 	// cron init
-	// go backgroundCleanUpLock()
+	go backgroundCleanUpLock()
 	for {
 		cronChannel := make(chan time.Time, 1)
 		time.Sleep(1 * time.Second)
