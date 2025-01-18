@@ -184,6 +184,12 @@ func MutexLockExample() {
 }
 ```
 
+### Decimal
+
+```sh
+go get github.com/shopspring/decimal
+```
+
 ### References
 
 - https://go.dev/wiki/MutexOrChannel
