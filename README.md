@@ -197,3 +197,7 @@ go get github.com/shopspring/decimal
 - https://medium.com/@asgrr/golang-sync-4787b18fee41
 - https://viblo.asia/p/go-sync-package-6-khai-niem-chinh-ban-can-biet-Ny0VGj2pLPA
 - https://psj.codes/concurrency-in-go-part-1-goroutines-channels-and-select
+
+## Target for 1st Quarter of 2025
+
+Go through all the basic topics at https://go.dev/doc/tutorial/

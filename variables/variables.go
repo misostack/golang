@@ -35,4 +35,41 @@ func ExampleDataTypes() {
 	for i, r := range s {
 		fmt.Printf("%v: %c\n", i, r)
 	}
+
+	// derived types
+	// pointer
+	var a1, b1 int = 1, 2
+	var c1 = sum(&a1, &b1)
+	fmt.Println(*c1)
+
+	var x1 int = 10
+	double(&x1)
+	fmt.Println(x1)
+	double(&x1)
+	fmt.Println(x1)
+
+	// array
+	// fixed size
+	var arr1 [3]int = [3]int{1, 2, 3}
+	fmt.Println(arr1[0])
+	fmt.Println(arr1[1])
+	fmt.Println(arr1[2])
+
+	// dynamic size ( slice )
+	var arr2 []int
+	arr2 = append(arr2, 1)
+	arr2 = append(arr2, 2)
+	arr2 = append(arr2, 3)
+	arr2 = append(arr2, 4)
+	arr2 = append(arr2, 5)
+	fmt.Println(arr2[len(arr2)-1])
+}
+
+func sum(a, b *int) *int {
+	c := *a + *b
+	return &c
+}
+
+func double(x *int) {
+	*x *= 2
 }
