@@ -163,8 +163,7 @@ func processingKey(processId string, k string) {
 	fmt.Printf("Finished processing for key=%v\n at %v", k, time.Now())
 }
 
-func main() {
-
+func main_000() {
 	// cron init
 	go backgroundCleanUpLock()
 	for {
@@ -187,4 +186,8 @@ func main() {
 
 	// example.MutexLockExample()
 	// exampleOfHowLongSelectTake()
+}
+
+func main() {
+
 }
