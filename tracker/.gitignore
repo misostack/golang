@@ -1,0 +1,49 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go build artifacts
+*.o
+*.a
+*.s
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+*_gen.go
+
+# Output of go build
+/bin/
+/tmp/
+/dist/
+/build/
+
+# Dependency directories
+/vendor/
+
+# Logs
+*.log
+
+# IDE / Editor configs
+.vscode/*.*
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+
+# OS / Misc
+.DS_Store
+Thumbs.db
+
+# Air specific
+.air.toml.local
+
+# Environment files (optional, if you don’t want to commit them)
+.env
+.env.*
