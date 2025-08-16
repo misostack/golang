@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	respond "gogym/tracker/internal/shared"
+	"gogym/tracker/internal/tracker"
 	"net/http"
 
 	"log"
@@ -14,8 +16,11 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello World!"))
+		respond.JSON(w, http.StatusOK, map[string]string{"message": "Hello World!"})
 	})
+
+	r.Mount("/trackers", tracker.NewTrackerHandler().Routes())
+
 	port := "3000"
 	err := http.ListenAndServe(fmt.Sprintf(":%s", port), r)
 	if err != nil {

@@ -1,0 +1,8 @@
+@baseUrl = http://localhost:3000
+
+# Hello
+GET {{baseUrl}}
+
+# List all trackers
+GET {{baseUrl}}/trackers
+Content-Type: application/json

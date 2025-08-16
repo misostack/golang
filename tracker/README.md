@@ -14,7 +14,8 @@ go install github.com/air-verse/air@latest
 
 **Entities:**
 
-- Day: date, completed/not-completed
+- Tracker: TrackerId, Name
+- TrackerDay: TrackerId, date, completed/not-completed
 
 ```json
 {
