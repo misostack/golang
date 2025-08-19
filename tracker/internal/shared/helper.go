@@ -1,4 +1,4 @@
-package respond
+package shared
 
 import (
 	"encoding/json"

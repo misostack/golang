@@ -11,6 +11,9 @@ go mod tidy
 go get -u github.com/go-chi/chi/v5
 go install github.com/air-verse/air@latest
 go install github.com/pressly/goose/v3/cmd/goose@latest
+go get github.com/joho/godotenv
+go get -u gorm.io/gorm
+go get -u gorm.io/driver/postgres
 ```
 
 ```sh
@@ -18,6 +21,7 @@ goose
 goose create add_tracker_table sql
 goose up
 goose status
+goose create add_tracker_status_column sql
 ```
 
 **Entities:**
@@ -43,3 +47,5 @@ goose status
 - [GoChi](https://go-chi.io/#/pages/getting_started) : golang http framework
 - [Air](https://github.com/air-verse/air) : live reload golang project
 - [Goose](https://pressly.github.io/goose/installation/#linux) : database migration
+- [Godotenv](https://github.com/joho/godotenv): load env
+- [GORM](https://gorm.io/docs/) : Golang ORM
