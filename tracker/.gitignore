@@ -47,3 +47,4 @@ Thumbs.db
 # Environment files (optional, if you don’t want to commit them)
 .env
 .env.*
+!.env.sample
