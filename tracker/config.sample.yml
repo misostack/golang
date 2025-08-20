@@ -1,0 +1,14 @@
+server:
+  host: "127.0.0.1"
+  port: "1337"
+
+database:
+  host: "localhost"
+  port: "5432"
+  user: "postgres"
+  password: "123456"
+  dbname: "go_tracker"
+  sslmode: "disable"
+
+log:
+  level: "debug"

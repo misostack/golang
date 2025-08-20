@@ -1,5 +1,12 @@
 ### Day 1: 16 Aug 2025
 
+#### Getting started
+
+```sh
+cp .env.sample .env
+cp config.sample.yml config.yml
+```
+
 > Application to manage codegym track
 
 ```sh
@@ -14,6 +21,7 @@ go install github.com/pressly/goose/v3/cmd/goose@latest
 go get github.com/joho/godotenv
 go get -u gorm.io/gorm
 go get -u gorm.io/driver/postgres
+go get -u github.com/rs/zerolog/log
 ```
 
 ```sh
@@ -49,3 +57,5 @@ goose create add_tracker_status_column sql
 - [Goose](https://pressly.github.io/goose/installation/#linux) : database migration
 - [Godotenv](https://github.com/joho/godotenv): load env
 - [GORM](https://gorm.io/docs/) : Golang ORM
+- [Twelve Factors](https://12factor.net/)
+- [Zerolog](https://github.com/rs/zerolog)
